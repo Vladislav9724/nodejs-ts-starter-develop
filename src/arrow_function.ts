@@ -1,5 +1,5 @@
 
-let ask = (question:string, yes: any, no: any) => {
+const ask = (question:string, yes: any, no: any): string => {
     if(question === "Я согласен."){
         return yes()
     }   return no()
