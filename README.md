@@ -1,2 +1,4 @@
-# nodejs-ts-starter-develop
- 
+## Install dependencies:
+```
+npm i
+```
