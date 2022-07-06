@@ -1,16 +1,56 @@
 
-const ask = (question:string, yes: any, no: any): string => {
-    if(question === "Я согласен."){
-        return yes()
-    }   return no()
-}
+// // // const ask = (question:string, yes: Iyes, no: Ino): string => {
+// // //     if(question === "Я согласен."){
+// // //         return yes(25)
+// // //     }   return no()
+// // // }
 
-const yes = () => {return "Вы согласились."}
-const no  = () => {return "Вы отменили выполнение."}
-const question = "Я согласен."
+// // // interface Iyes {
+// // //     (x: number):any
+// // // }
 
-const res = ask (question, yes, no)
+// // // interface Ino {
+// // //     (): string
+// // // }
+ 
+// // // const yes: Iyes = (x:number):any => {return x}
+// // // const no: Ino  = ():string => {return "Вы отменили выполнение."}
+// // // const question = "Я согласен."
 
-console.log(`Res = ${res}`);
-console.log(typeof (res));
+// // // const res = ask (question, yes, no)
+
+// // // console.log(`Res = ${res}`);
+// // // console.log(typeof (res));
+
+// interface IUser {
+//     name: string
+//     age: number
+//     email: string
+// }
+
+// interface IUser_2 {
+//     name: string
+//     age: number
+//     email: string
+//     lastName:string
+// }
+
+// interface ImakeOlder {
+//     (user: IUser): IUser_2
+// }
+
+// const makeOlder: ImakeOlder = (user: IUser):IUser_2 => {
+//     return Object.assign({}, user, {age: user.age + 1}, {lastName: 'Tsiapka'})
+//  }
+
+// const user: IUser = {
+// name: 'John',
+// age: 17,
+// email: 'jdjjfjfjfj@'
+// }
+
+// const olderUser = makeOlder(user)
+
+// console.log(olderUser);
+
 
