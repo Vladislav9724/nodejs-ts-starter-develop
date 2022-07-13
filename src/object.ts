@@ -1,31 +1,77 @@
 
-interface Iauto {
-    color: string,
-    kpp: string,
-    type: string
-}
-
-interface Iauto_2 {
-    color: string,
-    kpp: string,
+interface Ianimal {
     type: string,
-    stateNumber: string
-}
-interface IoutputTypeAuto {
-    (auto: Iauto): Iauto_2
-}
-
-const outputTypeAuto: IoutputTypeAuto = (auto: Iauto):Iauto_2 => {
-    return Object.assign( auto, {stateNumber: 'AO 24-13 EM'} )
+    age: number,
+    name: string,
+    address?: Iaddress
 }
 
-const auto: Iauto = {
-    color: 'red',
-    kpp: 'auto',
-    type: 'sedan',
+interface Iaddress {
+    city: string,
+    street: string,
+    house?: number
+} 
 
+
+
+function animals (array:Ianimal[]):number[]  {
+    const result = []
+    for (let animal in array){      
+        result.push(array [animal].age)
+    }
+    return result
 }
 
-const typeAuto = outputTypeAuto(auto)
+function animals1 (array:Ianimal[]):string[]  {
+    const result = []
+    for (let animal in array){        
+        result.push(array [animal].name)
+    }
+    return result
+}
 
-console.log(typeAuto);
+function animals2 (array:Ianimal[]):any[]  {
+    const result = []
+    for (let animal in array){        
+        result.push(array [animal].address)
+    }
+    return result
+}
+
+
+const dog: Ianimal = {
+    type: 'shpits',
+    age: 4,
+    name: 'Patron',
+    address:{
+        city: 'Dnipro',
+        street: 'Gagarina'
+    }
+}
+
+const cat: Ianimal = {
+    type: 'Siamese',
+    age: 8,
+    name: 'Barsic',
+    
+}
+
+const parrot: Ianimal = {
+    age: 1,
+    name: 'cache',
+    type: 'red',
+    address:{
+        city: 'Lozova',
+        street: 'Roboha',
+        house: 15,
+    }
+}
+
+const response = animals ([dog, cat, parrot])
+console.log(`Age = ${response}`)
+
+const response2 = animals1 ([dog, cat, parrot])
+console.log(`Name: ${response2}`);
+const response3 = animals2 ([dog, cat, parrot])
+console.log(response3);
+
