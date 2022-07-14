@@ -1,8 +1,8 @@
-// interface Iuser {
-//     name: string,
-//     age?: number,
-//     isAdmin: boolean,
-//     }
+interface Iuser {
+    name: string,
+    age?: number,
+    isAdmin: boolean,
+    }
 
 // let user:Iuser = {
 //     name:'Jonh',
@@ -52,33 +52,60 @@
 // console.log("test" in obj);
 
 
-// let user:Iuser = {
-//     name: 'Jonh',
-//     age: 25,
-//     isAdmin: true,
+let user:any = {
+    name: 'Jonh',
+    age: 25,
+    isAdmin: true,
+}
+
+for (let key in user) {
+    console.log(key);
+    console.log(user[key]);
+    
+}  
+
+// interface Icodes {
+//     '+49': string,
+//     '+41': string,
+//     '+44': string,
+//     '+1': string,
 // }
 
-// for (let key in user) {
-//     console.log(key);
-//     console.log(user[key]);
+// let codes: Icodes = {
+//     '+49': 'Germaiy',
+//     '+41': 'Scvets',
+//     '+44': 'Velic',
+//     '+1': 'SCA',
+// }
+
+// for (let code in codes) {
+//     console.log(code);
     
-// }  
+// // }
 
-interface Icodes {
-    '+49': string,
-    '+41': string,
-    '+44': string,
-    '+1': string,
-}
+// const course = {
+//     name: 'Ivan',
+//     lastNama: 'Smit',
+// }
 
-let codes: Icodes = {
-    '+49': 'Germaiy',
-    '+41': 'Scvets',
-    '+44': 'Velic',
-    '+1': 'SCA',
-}
-
-for (let code in codes) {
-    console.log(code);
+// for (const prop of course){
+//     console.log([prop]);
     
-}
+// }
+
+// // const elements = Object.keys(course)
+// // console.log(elements);
+//
+// interface Employee {
+//     name?: string;
+//     salary: number;
+//   }
+//
+//   const emp: Employee = {
+//     name: 'Tom',
+//     salary: 123,
+//   };
+//
+// //   const name: string = emp.name !== undefined ? emp.name : '';
+//
+//   console.log(emp.name);

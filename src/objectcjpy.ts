@@ -18,17 +18,17 @@
 // console.log(a === b);
 
 
-let user = {
-    name: 'Ivan'
-}
+// let user = {
+//     name: 'Ivan'
+// }
 
-let user1 = {
-    lastName: 'Smit'
-}
-let user3 = {
-    age: 25
-}
+// let user1 = {
+//     lastName: 'Smit'
+// }
+// let user3 = {
+//     age: 25
+// }
 
-Object.assign(user, user1, user3)
+// Object.assign(user, user1, user3)
 
-console.log(user3);
+// console.log(user3);
