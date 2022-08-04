@@ -77,7 +77,7 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 //     array.forEach((user:IUser) => {
 //         if(user.address){
 //             getAddress1.push(user.address)
-//         }вивід
+//         }
 // })
 //     return getAddress1
 // }
@@ -86,12 +86,26 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 // const mapUser1 = new Map(Object.entries(user1))
 // console.log(mapUser1)
 
-const mapUsers = function (users:IUser[]): object {
+// const mapUsers = function (users:IUser[]): object {
+//     const result = new Map()
+//     users.forEach((user:IUser) => {
+//         result.set(user.age , user)
+//     } )
+//     return result
+// }
+//
+// console.log(mapUsers(users))
+
+function mapUsers (users:IUser[]): object {
     const result = new Map()
     users.forEach((user:IUser) => {
-        result.set(user.age , user)
-    } )
+        if(user.address){
+            result.set(user.city, user.address)
+        }
+
+    })
     return result
+
 }
 
 console.log(mapUsers(users))
