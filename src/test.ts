@@ -124,13 +124,36 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 //
 // console.log(mapUsers1(users))
 
-function getNum (numbers: number[]): object {
-    const setNum = new Set()
-    numbers.forEach((number) => {
-        setNum.add(number)
-    } )
-    return setNum
+// function getNum (numbers: number[]): object {
+//     const setNum = new Set()
+//     numbers.forEach((number) => {
+//         setNum.add(number)
+//     } )
+//     return setNum
+//
+// }
+//
+// console.log(getNum(numbers))
 
+
+//                        task  5
+const setNum1 = new Set(numbers)
+console.log(setNum1)
+
+
+//                        task  6
+const mapUser1_obj = new Map(Object.entries(user1))
+console.log(mapUser1_obj)
+
+
+//                        task  7
+const getWekMap = function (users:IUser[]): object {
+    const wekMap = new WeakMap()
+    users.forEach((user:IUser) => {
+        if(user.address){
+            wekMap.set(user1.address, user.userId)
+        }
+    })
+    return wekMap
 }
-
-console.log(getNum(numbers))
+console.log(getWekMap(users))

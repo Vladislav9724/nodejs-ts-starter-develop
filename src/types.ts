@@ -424,11 +424,33 @@ import {log} from "util";
 // }
 //
 
-
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const newArray:any = []
-
-array.forEach((element) => {
-   newArray.push(element += element)
-})
-console.log(newArray)
+//
+// // const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+// // const newArray:any = []
+// //
+// // array.forEach((element) => {
+// //    newArray.push(element += element)
+// // })
+// // console.log(newArray)
+//
+// interface IUser {
+//     name: string,
+//     age: number
+// }
+//  const user1 = {
+//    name: 'Ivan',
+//    age: 23
+//  }
+//  const user2 = {
+//    name: 'Oleg',
+//    age: 32
+//  }
+//  const user3 = {
+//    name: 'Roman',
+//    age: 15
+//  }
+//
+//  const users =[user1, user2, user3]
+// const wm1 = new WeakMap()
+//  wm1.set(user1, user1.name)
+// console.log(wm1.get(users))
