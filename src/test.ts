@@ -95,7 +95,7 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 // }
 //
 // console.log(mapUsers(users))
-
+//
 function mapUsers (users:IUser[]): object {
     const result = new Map()
     users.forEach((user:IUser) => {
@@ -109,3 +109,17 @@ function mapUsers (users:IUser[]): object {
 }
 
 console.log(mapUsers(users))
+
+function mapUsers1 (users:IUser[]): object {
+    const result = new Map()
+    users.forEach((user:IUser) => {
+        if(user.address){
+            result.set(user.address.house, user)
+        }
+
+    })
+    return result
+
+}
+
+console.log(mapUsers1(users))
