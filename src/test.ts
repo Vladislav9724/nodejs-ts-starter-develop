@@ -6,14 +6,15 @@ interface IUser{
     name: string,
     city: string,
     age: number,
-    address?: {
-        street: string,
-        house: number,
-        apartment: number
-    }
+    address?: IAddress,
     photo?:{
         url: string
     }
+}
+interface IAddress {
+    street: string,
+    house: number,
+    apartment: number
 }
 
 
@@ -53,20 +54,44 @@ const user3 = {
 
 const users = [user1, user2, user3]
 const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
-//
+
 // const getUserName = function (array: IUser[]): string[] {
 //     const userName = users.map(user => user.name.toUpperCase())
 //     return userName
 // }
 // console.log(getUserName(users))
+//
+// const getUserName1 = function (array:IUser[]): string[] {
+//     const getName1: string[] = []
+//     array.forEach((user) => {
+//         getName1.push(user.name.toUpperCase())
+//     })
+//     return getName1
+//
+// }
+//
+// console.log(getUserName1(users))
 
-const getUserName = function (array:IUser[]): string[] {
-    const getName: string[] = []
-    users.forEach((user) => {
-        getName.push(user.name.toUpperCase())
-    })
-    return getName
+// const getUserName2 = function (array:IUser[]): IAddress[] {
+//     const getAddress1: IAddress[] = []
+//     array.forEach((user:IUser) => {
+//         if(user.address){
+//             getAddress1.push(user.address)
+//         }вивід
+// })
+//     return getAddress1
+// }
+// console.log(getUserName2(users))
 
+// const mapUser1 = new Map(Object.entries(user1))
+// console.log(mapUser1)
+
+const mapUsers = function (users:IUser[]): object {
+    const result = new Map()
+    users.forEach((user:IUser) => {
+        result.set(user.age , user)
+    } )
+    return result
 }
 
-console.log(getUserName(users))
+console.log(mapUsers(users))
