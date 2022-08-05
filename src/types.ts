@@ -490,12 +490,28 @@ const user3 = {
 
 // console.log(Object.entries(user3))
 
-function key (user3: IUser3): any{
-    for (let key in user3) {
-        console.log(key)
-    }
-    for (let add in user3.address){
-        console.log(add)
+// function key (user3: IUser3): any{
+//     for (let key in user3) {
+//         console.log(key)
+//     }
+//     for (let add in user3.address){
+//         console.log(add)
+//     }
+// }
+// key(user3)
+
+
+const showKeys = (obj:any) => {
+    for (let key in obj) {
+        if (typeof(obj[key]) === 'object')
+        {
+            showKeys(obj[key]);
+        }
+        else
+        {
+            console.log(key);
+        }
     }
 }
-key(user3)
+
+showKeys(user3);

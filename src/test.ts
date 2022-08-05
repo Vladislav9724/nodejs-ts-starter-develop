@@ -180,3 +180,18 @@ function key (user3: IUser){
 }
 key(user3)
 
+//               более правыльний вариант
+const showKeys = (obj:any) => {
+    for (let key in obj) {
+        if (typeof(obj[key]) === 'object')
+        {
+            showKeys(obj[key]);
+        }
+        else
+        {
+            console.log(key);
+        }
+    }
+}
+
+showKeys(user3);
