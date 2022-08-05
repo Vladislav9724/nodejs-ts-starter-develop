@@ -136,24 +136,47 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 // console.log(getNum(numbers))
 
 
-//                        task  5
-const setNum1 = new Set(numbers)
-console.log(setNum1)
-
-
-//                        task  6
-const mapUser1_obj = new Map(Object.entries(user1))
-console.log(mapUser1_obj)
+// //                        task  5
+// const setNum1 = new Set(numbers)
+// console.log(setNum1)
+//
+//
+// //                        task  6
+// const mapUser1_obj = new Map(Object.entries(user1))
+// console.log(mapUser1_obj)
 
 
 //                        task  7
-const getWekMap = function (users:IUser[]): object {
-    const wekMap = new WeakMap()
-    users.forEach((user:IUser) => {
-        if(user.address){
-            wekMap.set(user1.address, user.userId)
-        }
-    })
-    return wekMap
+// const getWekMap = function (users:IUser[]): object {
+//     const wekMap = new WeakMap()
+//     users.forEach((user:IUser) => {
+//         if(user.address){
+//             wekMap.set(user.address, user)
+//         }
+//
+//     })
+//     return wekMap
+// }
+// const result = getWekMap(users)
+//
+// function output (wekMap: any) {
+//     wekMap.forEach((item: any) => {
+//         console.log(item)
+//     })
+//
+// }
+// output(result)
+
+
+
+//                        task  8,   9
+function key (user3: IUser){
+    for (let key in user3) {
+        console.log(key)
+    }
+    for (let add in user3.address){
+        console.log(add)
+    }
 }
-console.log(getWekMap(users))
+key(user3)
+

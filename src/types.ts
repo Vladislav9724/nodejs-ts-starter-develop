@@ -432,7 +432,7 @@ import {log} from "util";
 // //    newArray.push(element += element)
 // // })
 // // console.log(newArray)
-//
+// //
 // interface IUser {
 //     name: string,
 //     age: number
@@ -450,7 +450,52 @@ import {log} from "util";
 //    age: 15
 //  }
 //
-//  const users =[user1, user2, user3]
+//
 // const wm1 = new WeakMap()
 //  wm1.set(user1, user1.name)
-// console.log(wm1.get(users))
+//
+// const mw =[ wm1]
+// console.log(mw)
+//
+//
+//
+// let student1 = { name: 'James', age: 26 };
+// let student2 = { name: 'Julia', age: 27 };
+// const { inspect } = require('util');
+// const weakSet = new WeakSet([student1, student2]);
+// console.log(inspect(weakSet, { showHidden: true }));
+interface IUser3 {
+    userId: number,
+    name:string,
+    city: string,
+    age: number,
+    address: IAddress
+}
+interface IAddress {
+    street:string,
+    house: number,
+    apartment:number,
+}
+const user3 = {
+    userId: 3,
+    name: 'Vlad',
+    city: 'Dnipro',
+    age: 25,
+    address: {
+        street: 'Gagarina',
+        house: 57,
+        apartment: 315,
+    }
+}
+
+// console.log(Object.entries(user3))
+
+function key (user3: IUser3): any{
+    for (let key in user3) {
+        console.log(key)
+    }
+    for (let add in user3.address){
+        console.log(add)
+    }
+}
+key(user3)
