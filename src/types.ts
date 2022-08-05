@@ -488,20 +488,20 @@ const user3 = {
     }
 }
 
-// console.log(Object.entries(user3))
-
+// // console.log(Object.entries(user3))
+//
 // function key (user3: IUser3): any{
 //     for (let key in user3) {
-//         console.log(key)
+//         console.log(Object.values(user3))
 //     }
 //     for (let add in user3.address){
-//         console.log(add)
+//         console.log(Object.values(user3))
 //     }
 // }
 // key(user3)
+// //
 
-
-const showKeys = (obj:any) => {
+const showKeys = (obj) => {
     for (let key in obj) {
         if (typeof(obj[key]) === 'object')
         {
@@ -515,3 +515,55 @@ const showKeys = (obj:any) => {
 }
 
 showKeys(user3);
+// interface IUser{
+//     name: string,
+//     age: number,
+//     isAdmin: boolean
+// }
+//
+// let user: IUser = {
+//     name: "John",
+//     age: 30,
+//     isAdmin: true
+// };
+//
+// console.log(Object.keys(user))
+//
+// // for (let key in user) {
+// //     // ключи
+// //     // console.log( key );  // name, age, isAdmin
+// //     // значения ключей
+// //     console.log( user[key] ); // John, 30, true
+// // }
+
+// interface IUser3 {
+//     userId: number,
+//     name:string,
+//     city: string,
+//     age: number,
+//     address: IAddress
+// }
+// interface IAddress {
+//     street:string,
+//     house: number,
+//     apartment:number,
+// }
+// const user3 = {
+//     userId: 3,
+//     name: 'Vlad',
+//     city: 'Dnipro',
+//     age: 25,
+//     address: {
+//         street: 'Gagarina',
+//         house: 57,
+//         apartment: 315,
+//     }
+// }
+//
+// // console.log(Object.entries(user3))
+//
+// function key (user3: IUser3): any{
+//     console.log(Object.values(user3))
+//     console.log(Object.values(user3.address))
+// }
+// key(user3)

@@ -169,18 +169,18 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 
 
 
-//                        task  8,   9
-function key (user3: IUser){
-    for (let key in user3) {
-        console.log(key)
-    }
-    for (let add in user3.address){
-        console.log(add)
-    }
-}
-key(user3)
+//                        task  8,
+// function key (user3: IUser){
+//     for (let key in user3) {
+//         console.log(key)
+//     }
+//     for (let add in user3.address){
+//         console.log(add)
+//     }
+// }
+// key(user3)
 
-//               более правыльний вариант
+//               более правильний вариант
 const showKeys = (obj:any) => {
     for (let key in obj) {
         if (typeof(obj[key]) === 'object')
@@ -189,9 +189,33 @@ const showKeys = (obj:any) => {
         }
         else
         {
-            console.log(key);
+            console.log(`Keys: ${key}`);
+        }
+    }
+}
+showKeys(user3);
+
+//                             task 9
+
+
+const showValues = (obj:any) => {
+    for (let key in obj) {
+        if (typeof(obj[key]) === 'object')
+        {
+            showValues(obj[key]);
+        }
+        else
+        {
+            console.log(`Values: ${obj[key]}`);
         }
     }
 }
 
-showKeys(user3);
+showValues(user3);
+
+
+
+//                             11
+
+const data = new Date()
+console.log(data)
