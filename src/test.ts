@@ -180,42 +180,58 @@ const numbers =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 4, 5, 6, 7, 8, 9, 10]
 // }
 // key(user3)
 
-//               более правильний вариант
-const showKeys = (obj:any) => {
-    for (let key in obj) {
-        if (typeof(obj[key]) === 'object')
-        {
-            showKeys(obj[key]);
-        }
-        else
-        {
-            console.log(`Keys: ${key}`);
-        }
-    }
-}
-showKeys(user3);
-
-//                             task 9
+console.log(Object.keys(user3))
+console.log(Object.values(user3))
 
 
-const showValues = (obj:any) => {
-    for (let key in obj) {
-        if (typeof(obj[key]) === 'object')
-        {
-            showValues(obj[key]);
-        }
-        else
-        {
-            console.log(`Values: ${obj[key]}`);
-        }
-    }
-}
-
-showValues(user3);
-
-
-
-//                             11
-
-const data = new Date()
-console.log(data)
+// //               более правильний вариант
+// const showKeys = (obj:any) => {
+//     for (let key in obj) {
+//         if (typeof(obj[key]) === 'object')
+//         {
+//             showKeys(obj[key]);
+//         }
+//         else
+//         {
+//             console.log(`Keys: ${key}`);
+//
+//         }
+//     }
+// }
+//
+// showKeys(user3);
+//
+// //                             task 9
+//
+//
+// const showValues = (obj:any) => {
+//     for (let key in obj) {
+//         if (typeof(obj[key]) === 'object')
+//         {
+//             showValues(obj[key]);            // рекурсия!!!
+//         }
+//         else
+//         {
+//             console.log(`Values: ${obj[key]}`);
+//         }
+//     }
+// }
+//
+// showValues(user3);
+//
+//
+//
+// //                             11
+//
+// const data = new Date()
+// console.log(data)
+//
+//
+//
+// //                             12
+//
+//
+// const json = JSON.stringify(user1)
+// console.log(json)
+// const obj = JSON.parse(json)
+// console.log(obj)

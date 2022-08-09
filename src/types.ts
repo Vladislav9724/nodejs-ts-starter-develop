@@ -464,57 +464,57 @@ import {log} from "util";
 // const { inspect } = require('util');
 // const weakSet = new WeakSet([student1, student2]);
 // console.log(inspect(weakSet, { showHidden: true }));
-interface IUser3 {
-    userId: number,
-    name:string,
-    city: string,
-    age: number,
-    address: IAddress
-}
-interface IAddress {
-    street:string,
-    house: number,
-    apartment:number,
-}
-const user3 = {
-    userId: 3,
-    name: 'Vlad',
-    city: 'Dnipro',
-    age: 25,
-    address: {
-        street: 'Gagarina',
-        house: 57,
-        apartment: 315,
-    }
-}
-
-// // console.log(Object.entries(user3))
-//
-// function key (user3: IUser3): any{
-//     for (let key in user3) {
-//         console.log(Object.values(user3))
-//     }
-//     for (let add in user3.address){
-//         console.log(Object.values(user3))
+// interface IUser3 {
+//     userId: number,
+//     name:string,
+//     city: string,
+//     age: number,
+//     address: IAddress
+// }
+// interface IAddress {
+//     street:string,
+//     house: number,
+//     apartment:number,
+// }
+// const user3 = {
+//     userId: 3,
+//     name: 'Vlad',
+//     city: 'Dnipro',
+//     age: 25,
+//     address: {
+//         street: 'Gagarina',
+//         house: 57,
+//         apartment: 315,
 //     }
 // }
-// key(user3)
+//
+// // // console.log(Object.entries(user3))
 // //
-
-const showKeys = (obj) => {
-    for (let key in obj) {
-        if (typeof(obj[key]) === 'object')
-        {
-            showKeys(obj[key]);
-        }
-        else
-        {
-            console.log(key);
-        }
-    }
-}
-
-showKeys(user3);
+// // function key (user3: IUser3): any{
+// //     for (let key in user3) {
+// //         console.log(Object.values(user3))
+// //     }
+// //     for (let add in user3.address){
+// //         console.log(Object.values(user3))
+// //     }
+// // }
+// // key(user3)
+// // //
+//
+// const showKeys = (obj) => {
+//     for (let key in obj) {
+//         if (typeof(obj[key]) === 'object')
+//         {
+//             showKeys(obj[key]);
+//         }
+//         else
+//         {
+//             console.log(key);
+//         }
+//     }
+// }
+//
+// showKeys(user3);
 // interface IUser{
 //     name: string,
 //     age: number,
@@ -548,19 +548,23 @@ showKeys(user3);
 //     house: number,
 //     apartment:number,
 // }
-// const user3 = {
-//     userId: 3,
-//     name: 'Vlad',
-//     city: 'Dnipro',
-//     age: 25,
-//     address: {
-//         street: 'Gagarina',
-//         house: 57,
-//         apartment: 315,
-//     }
-// }
-//
-// // console.log(Object.entries(user3))
+const user3 = {
+    userId: 3,
+    name: 'Vlad',
+    city: 'Dnipro',
+    age: 25,
+    address: {
+        street: 'Gagarina',
+        house: 57,
+        apartment: 315,
+    }
+}
+console.log(Object.keys(user3).length)
+console.log(Object.keys(user3))
+console.log(Object.values(user3))
+console.log(Reflect.ownKeys(user3))
+console.log(Reflect.ownKeys(user3).length)
+
 //
 // function key (user3: IUser3): any{
 //     console.log(Object.values(user3))
