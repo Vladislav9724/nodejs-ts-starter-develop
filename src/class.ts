@@ -1,3 +1,16 @@
+interface  IUser{
+    userId: number,
+        name: string,
+        city: string,
+        age: number,
+        address: IAddress,
+
+}
+interface IAddress {
+    street: string,
+    house: number,
+    apartment: number
+}
 
 
 const user3 = {
@@ -12,7 +25,7 @@ const user3 = {
     }
 }
 
-function getUserKey (user3: any): any{
+function getUserKey (user3: IUser): object{
     const userKey = []
     for (let key in user3 ){
         userKey.push(key)
