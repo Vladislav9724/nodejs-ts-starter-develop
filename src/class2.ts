@@ -36,8 +36,8 @@ class User {
     constructor(user1:IUser) {
         this.user1 = user1
     }
-    public getUserKey(user1:IUser):IGetUserKey[] {
-        const getUserKey:any = []
+    public getUserKey(user1:IUser):object {
+        const getUserKey = []
         for (let key in user1){
             getUserKey.push(key)
         }
