@@ -21,11 +21,7 @@ class User implements IUser{
         this.userId = userId
     }
     getUserKey (User:any):any {
-        const userKey: any = []
-        for (let key in User){
-            userKey.push(key)
-            console.log(userKey)
-        }
+        const userKey: any = Object.keys(li)
         return userKey
     }
 
@@ -33,8 +29,8 @@ class User implements IUser{
 }
 
 const li = new User(15, 'Ivan', 'Dnipro', 56)
-console.log(Object.keys(li))
-console.log(Object.values(li))
+console.log(li.getUserKey(User))
+
 
 
 //
