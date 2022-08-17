@@ -1,14 +1,10 @@
-import {isKeyObject} from "util/types";
-
 interface IUser {
     userId: number,
     name: string,
     city: string,
     age: number,
     address?: IAddress,
-    photo?: {
-        url: string
-    }
+
 }
 
 interface IAddress {
@@ -31,21 +27,22 @@ const user = {
 }
 
 interface IGetUserKey {
-    getUserKey(): any
-    user:IUser
+    getUserKey(): string[]
+    user: IUser
 }
 
 class User implements IGetUserKey {
     public user: any
 
-    constructor(user: any) {
+    constructor(user: IUser) {
         this.user = user
     }
 
-    public getUserKey(): any {
-        const getUserKey: any = []
+    public getUserKey(): string[] {
+        const getUserKey: string[] = []
         for (let key in this.user) {
             getUserKey.push(key)
+
             if(typeof (this.user[key]) === "object"){
                 for (key in this.user[key] ){
                     getUserKey.push(key)
@@ -60,3 +57,4 @@ class User implements IGetUserKey {
 
 const li = new User(user)
 console.log(li.getUserKey())
+console.log(li.getUserKey().length)

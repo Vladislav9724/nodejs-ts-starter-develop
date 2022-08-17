@@ -179,27 +179,27 @@ import {log} from "util";
 //     }
 // }
 // key(user3)
-
-console.log(Object.keys(user3))
-console.log(Object.values(user3))
-
-
-// //               более правильний вариант
-const showKeys = (obj:any) => {
-    for (let key in obj) {
-        if (typeof(obj[key]) === 'object')
-        {
-            showKeys(obj[key]);
-        }
-        else
-        {
-            console.log(`Keys: ${key}`);
-
-        }
-    }
-}
-
-showKeys(user3);
+//
+// console.log(Object.keys(user3))
+// console.log(Object.values(user3))
+//
+//
+// // //               более правильний вариант
+// const showKeys = (obj:any) => {
+//     for (let key in obj) {
+//         if (typeof(obj[key]) === 'object')
+//         {
+//             showKeys(obj[key]);
+//         }
+//         else
+//         {
+//             console.log(`Keys: ${key}`);
+//
+//         }
+//     }
+// }
+//
+// showKeys(user3);
 //
 // //                             task 9
 //
@@ -235,3 +235,16 @@ showKeys(user3);
 // console.log(json)
 // const obj = JSON.parse(json)
 // console.log(obj)
+
+interface IUs {
+    name: string,
+    age: number
+}
+const user5: any = {
+    name: 'Ivan',
+    age: 25
+}
+
+for(let vel in user5){
+    console.log(user5[vel])
+}
