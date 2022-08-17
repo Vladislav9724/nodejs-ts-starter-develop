@@ -29,20 +29,17 @@
 // }
 //
 // interface IGetUserKey {
-//     getUserKey(): string[]
-//     user:IUser
+//     getUserKey(
+//         user: IUser
+//     ): string[]
+//
 // }
 //
 // class User implements IGetUserKey {
-//     public user: IUser
 //
-//     constructor(user: IUser) {
-//         this.user = user
-//     }
-//
-//     public getUserKey(): string[] {
+//     public getUserKey(user: IUser): string[] {
 //         const getUserKey: string[] = []
-//         for (let key in this.user) {
+//         for (let key in user) {
 //             getUserKey.push(key)
 //
 //         }
@@ -51,5 +48,5 @@
 //
 // }
 //
-// const li = new User(user)
-// console.log(li.getUserKey())
+// const li = new User()
+// console.log(li.getUserKey(user))
