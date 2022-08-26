@@ -16,7 +16,7 @@
 // }
 //
 //
-// const user = {
+// const userkey = {
 //     userId: 1,
 //     name: 'Vova',
 //     city: 'Lviv',
@@ -29,24 +29,24 @@
 // }
 //
 // interface IGetUserKey {
-//     getUserKey(
-//         user: IUser
+//     getKey(
+//         userkey: IUser
 //     ): string[]
 //
 // }
 //
-// class User implements IGetUserKey {
+// class UserKey implements IGetUserKey {
 //
-//     public getUserKey(user: IUser): string[] {
-//         const getUserKey: string[] = []
-//         for (let key in user) {
-//             getUserKey.push(key)
+//     public getKey(userkey: IUser): string[] {
+//         const getUserKey1: string[] = []
+//         for (let key in userkey) {
+//             getUserKey1.push(key)
 //
 //         }
-//         return getUserKey
+//         return getUserKey1
 //     }
 //
 // }
 //
-// const li = new User()
-// console.log(li.getUserKey(user))
+// const li = new UserKey()
+// console.log(li.getKey(userkey))

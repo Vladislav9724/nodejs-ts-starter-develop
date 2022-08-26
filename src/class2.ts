@@ -15,8 +15,7 @@
 //     apartment: number
 // }
 //
-//
-// const user = {
+// const userGetKey = {
 //     userId: 1,
 //     name: 'Vova',
 //     city: 'Lviv',
@@ -30,19 +29,19 @@
 //
 // interface IGetUserKey {
 //     getUserKey(): string[]
-//     user:IUser
+//     userGetKey:IUser
 // }
 //
-// class User implements IGetUserKey {
-//     public user: IUser
+// class UserGetKey implements IGetUserKey {
+//     public userGetKey: IUser
 //
-//     constructor(user: IUser) {
-//         this.user = user
+//     constructor(userGetKey: IUser) {
+//         this.userGetKey = userGetKey
 //     }
 //
 //     public getUserKey(): string[] {
 //         const getUserKey: string[] = []
-//         for (let key in this.user) {
+//         for (let key in this.userGetKey) {
 //             getUserKey.push(key)
 //
 //         }
@@ -51,5 +50,5 @@
 //
 // }
 //
-// const li = new User(user)
-// console.log(li.getUserKey())
+// const getKey = new UserGetKey(userGetKey)
+// console.log(getKey.getUserKey())

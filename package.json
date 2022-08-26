@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run": "ts-node ./src/class4.ts"
+    "run": "ts-node src/OOP/oop.ts"
   },
   "author": "",
   "license": "ISC",
