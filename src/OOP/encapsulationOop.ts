@@ -1,29 +1,18 @@
 
-class Developer {
-    public isDeveloper: boolean
+class Developer1 {
+
     constructor(
-        protected name: string,
-        public salary: number,
-    ) { this.isDeveloper = true}
+        public name: string,
+        private salary: number,
+    ) { }
 
     getInfo (){
         console.log('name', this.name)
         console.log('salary', this.salary)
     }
-}
 
-class JuniorDeveloper extends Developer{
-    constructor(
-        protected name: string,
-        public salary: number,)
-    {
-        super(name, salary);
-    }
-    getName():string{
-        return this.name
-    }
 
 }
 
-const developer = new JuniorDeveloper('Vlad', 15000)
-console.log('name', developer.getName())
+const developer = new Developer1('Vlad', 15000)
+console.log('name', developer)

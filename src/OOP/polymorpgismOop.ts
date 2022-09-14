@@ -1,32 +1,50 @@
 
 class Animal {
     constructor(
-        public name: string
-    ) {}
+        public name: string,
+        public age: number
+    ) {
+        this.name = name
+        this.age = age
+    }
 
-    run(): void {}
+    makeSound(){
+        return 'Some nice sound made'
+    }
 }
 
 class Dog extends Animal{
-    constructor(public name: string) {
-        super(name);
+    constructor(
+        public name: string,
+        public age: number,
+        public breed: string
+    ) {
+        super(name, age);
+        this.breed = breed
     }
 
-    run(){
-        console.log('Бегаю віляя хвостом')
+    makeSound() {
+        return 'woof';
     }
 
 }
 
-class Lion extends Animal{
-    constructor(public name: string) {
-        super(name);
+class Gat extends Animal{
+    constructor(
+        public name: string,
+        public age: number,
+        public weight: string
+    ) {
+        super(name, age)
+        this.weight = weight
     }
 
-    run(){
-        console.log('Бегаю хватаю добичу')
-    }
+   // makeSound() {
+   //     return 'meow';
+   // }
 }
 
-const get = new Lion('lev')
-console.log(get.name)
+const myDog = new Dog('Rex', 4, 'German Sh.')
+const myGat = new Gat('Pushok', 3, '5 kg')
+console.log(myDog.makeSound())
+console.log(myGat.makeSound())

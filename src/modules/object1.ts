@@ -7,7 +7,7 @@ export const userVlad = {
         house: 57,
         apartment: 820
     },
-    married: false
+    married: true
 }
 
 export const userTanya = {

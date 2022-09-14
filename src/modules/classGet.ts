@@ -11,7 +11,7 @@ export class User  implements IGetKey{
         this.userTanya =userTanya
     }
 
-    public getKey (isAdmin?: boolean = true): string[] {
+    public getKey (): string[] {
         const userKey: string[] = []
         for(let key in this.userVlad){
             userKey.push(key)
