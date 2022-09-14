@@ -1,7 +1,7 @@
 
 
-interface IID{
-    id:string,
+interface IObject{
+    id: string,
     title: string,
     body: string,
     isCompleted: boolean,
@@ -10,7 +10,7 @@ interface IID{
 }
 const {v4: uuidv4} = require('uuid')
 
-const obj =  {
+const object =  {
     id: uuidv4(),
     title: 'some title',
     body: 'some title',
@@ -19,43 +19,43 @@ const obj =  {
     updatedAt: new Date().toLocaleString()
 }
 
-interface IObject {
+interface IProperty {
 
     deleting(): object
     editing(): object
     display(): object
 }
 
-class Property  implements IObject{
-    public obj: IID
+class Property  implements IProperty{
+    public obj: IObject
 
-    constructor(obj:IID) {
+    constructor(obj:IObject) {
         this.obj = obj
     }
 
-    deleting(): object {
+    deleting():object {
         const tasks = []
-        tasks.push(obj)
+        tasks.push(object)
         tasks.pop()
         return tasks
 
     }
     editing(): object{
         const tasks = []
-        tasks.push(obj)
+        tasks.push(object)
         return tasks
     }
 
 
-    display(): object{
+    display(): object []{
     const tasks = []
-    tasks.push(obj)
+    tasks.push(object)
         return tasks
 
     }
 
 }
-const go = new Property(obj)
+const go = new Property(object)
 console.log(go.deleting())
 console.log(go.editing())
 console.log(go.display())
