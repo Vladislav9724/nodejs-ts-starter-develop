@@ -1,4 +1,4 @@
-
+const {v4: uuidv4} = require('uuid')
 
 interface IObject{
     id: string,
@@ -8,7 +8,6 @@ interface IObject{
     createdAt: string,
     updatedAt: string
 }
-const {v4: uuidv4} = require('uuid')
 
 const object =  {
     id: uuidv4(),
@@ -20,42 +19,23 @@ const object =  {
 }
 
 interface IProperty {
-
-    deleting(): object
-    editing(): object
-    display(): object
+    tasks: object
 }
 
 class Property  implements IProperty{
-    public obj: IObject
 
-    constructor(obj:IObject) {
-        this.obj = obj
+    constructor( public object: IObject) {
+        this.object = object
+
     }
 
-    deleting():object {
+    tasks(object: IObject):object {
         const tasks = []
         tasks.push(object)
-        tasks.pop()
-        return tasks
-
-    }
-    editing(): object{
-        const tasks = []
-        tasks.push(object)
-        return tasks
-    }
-
-
-    display(): object []{
-    const tasks = []
-    tasks.push(object)
         return tasks
 
     }
 
 }
-const go = new Property(object)
-console.log(go.deleting())
-console.log(go.editing())
-console.log(go.display())
+const property = new Property(object)
+console.log(property.tasks(object))
