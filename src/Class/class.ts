@@ -24,11 +24,6 @@ interface IProperty {
 
 class Property  implements IProperty{
 
-    constructor( public object: IObject) {
-        this.object = object
-
-    }
-
     tasks(object: IObject):object {
         const tasks = []
         tasks.push(object)
@@ -37,5 +32,5 @@ class Property  implements IProperty{
     }
 
 }
-const property = new Property(object)
+const property = new Property()
 console.log(property.tasks(object))
