@@ -9,7 +9,7 @@ interface ITask {
     updatedAt: string
 }
 
-const task =  {
+const task = {
     id: uuidv4(),
     title: 'some title',
     body: 'some title',
@@ -18,26 +18,24 @@ const task =  {
     updatedAt: new Date().toLocaleString()
 }
 
-
-interface IAddingTask {
+interface IToDoList {
     adding(
         task: ITask
     ): ITask[]
 
 }
 
-class AddingTask  implements IAddingTask {
+class ToDoList implements IToDoList {
 
-
-    public adding (task: ITask): ITask [] {
+    public adding(task: ITask): ITask [] {
         const tasks: ITask [] = []
         tasks.push(task)
         return tasks
 
     }
-
 }
-const addingTask = new AddingTask()
-const result = (addingTask.adding(task))
+
+const toDoList = new ToDoList()
+const result = (toDoList.adding(task))
 console.log(result)
 
