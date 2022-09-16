@@ -22,15 +22,15 @@ const task =  {
 interface IAddingTask {
     adding(
         task: ITask
-    ): string[]
+    ): ITask[]
 
 }
 
 class AddingTask  implements IAddingTask {
 
 
-    public adding (task: ITask): string [] {
-        const tasks: any [] = []
+    public adding (task: ITask): ITask [] {
+        const tasks: ITask [] = []
         tasks.push(task)
         return tasks
 
