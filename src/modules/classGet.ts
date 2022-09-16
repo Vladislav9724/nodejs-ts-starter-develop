@@ -3,7 +3,7 @@ import {userVlad} from "./object1";
 
 
 export class User  implements IGetKey{
-    public userVlad:IUser
+    public userVlad: IUser
     public userTanya: IUser
 
     constructor(userVlad: IUser, userTanya: IUser) {

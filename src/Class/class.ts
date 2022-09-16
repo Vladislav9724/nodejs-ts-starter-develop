@@ -1,7 +1,7 @@
 const {v4: uuidv4} = require('uuid')
 
-interface IObject{
-    id: string,
+interface IFile {
+    id: any,
     title: string,
     body: string,
     isCompleted: boolean,
@@ -9,7 +9,7 @@ interface IObject{
     updatedAt: string
 }
 
-const object =  {
+const file =  {
     id: uuidv4(),
     title: 'some title',
     body: 'some title',
@@ -18,19 +18,22 @@ const object =  {
     updatedAt: new Date().toLocaleString()
 }
 
-interface IProperty {
-    tasks: object
+
+interface IMethods_for_the_task {
+    adding: object
 }
 
-class Property  implements IProperty{
+class Methods_for_the_task  implements IMethods_for_the_task {
 
-    tasks(object: IObject):object {
+
+    adding(file: IFile): object {
         const tasks = []
-        tasks.push(object)
+        tasks.push(file)
         return tasks
 
     }
 
 }
-const property = new Property()
-console.log(property.tasks(object))
+const methodsForTheTask = new Methods_for_the_task()
+console.log(methodsForTheTask.adding(file))
+
