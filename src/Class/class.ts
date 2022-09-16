@@ -1,6 +1,6 @@
 const {v4: uuidv4} = require('uuid')
 
-interface IFile {
+interface IObjectForWork {
     id: any,
     title: string,
     body: string,
@@ -9,7 +9,7 @@ interface IFile {
     updatedAt: string
 }
 
-const file =  {
+const objectForWork =  {
     id: uuidv4(),
     title: 'some title',
     body: 'some title',
@@ -19,21 +19,23 @@ const file =  {
 }
 
 
-interface IMethods_for_the_task {
-    adding: object
+interface IMethodsForTheTask {
+    adding(objectForWork: IObjectForWork): object
+
 }
 
-class Methods_for_the_task  implements IMethods_for_the_task {
+class MethodsForTheTask  implements IMethodsForTheTask {
 
 
-    adding(file: IFile): object {
+    adding(ObjectForWork: IObjectForWork): object {
         const tasks = []
-        tasks.push(file)
+        tasks.push(objectForWork)
         return tasks
 
     }
 
 }
-const methodsForTheTask = new Methods_for_the_task()
-console.log(methodsForTheTask.adding(file))
+const methodsForTheTask = new MethodsForTheTask()
+const result = (methodsForTheTask.adding(objectForWork))
+console.log(result)
 
