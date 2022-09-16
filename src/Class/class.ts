@@ -1,6 +1,6 @@
 const {v4: uuidv4} = require('uuid')
 
-interface IObjectForWork {
+interface ITask {
     id: any,
     title: string,
     body: string,
@@ -9,7 +9,7 @@ interface IObjectForWork {
     updatedAt: string
 }
 
-const objectForWork =  {
+const task =  {
     id: uuidv4(),
     title: 'some title',
     body: 'some title',
@@ -19,23 +19,25 @@ const objectForWork =  {
 }
 
 
-interface IMethodsForTheTask {
-    adding(objectForWork: IObjectForWork): object
+interface IAddingTask {
+    adding(
+        task: ITask
+    ): string[]
 
 }
 
-class MethodsForTheTask  implements IMethodsForTheTask {
+class AddingTask  implements IAddingTask {
 
 
-    adding(ObjectForWork: IObjectForWork): object {
-        const tasks = []
-        tasks.push(objectForWork)
+    public adding (task: ITask): string [] {
+        const tasks: any [] = []
+        tasks.push(task)
         return tasks
 
     }
 
 }
-const methodsForTheTask = new MethodsForTheTask()
-const result = (methodsForTheTask.adding(objectForWork))
+const addingTask = new AddingTask()
+const result = (addingTask.adding(task))
 console.log(result)
 
