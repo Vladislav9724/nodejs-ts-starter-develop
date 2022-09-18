@@ -22,6 +22,9 @@ interface IToDoList {
     adding(
         task: ITask
     ): ITask[]
+    delete(
+        task: ITask
+    ): ITask[]
 
 }
 
@@ -33,9 +36,22 @@ class ToDoList implements IToDoList {
         return tasks
 
     }
+
+    public delete(task: ITask): ITask[] {
+        const tasks: ITask[] = []
+        if ('id' in task) {
+            tasks.pop()
+        } else tasks.push(task)
+        return tasks
+
+
+    }
 }
 
 const toDoList = new ToDoList()
-const result = (toDoList.adding(task))
-console.log(result)
+const resultAdding = (toDoList.adding(task))
+const resultDelete =(toDoList.delete(task))
+console.log(resultAdding)
+console.log(resultDelete)
+
 
