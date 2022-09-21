@@ -10,7 +10,7 @@ interface ITask {
 }
 
 const task = {
-    id: 2,
+    id: uuidv4(),
     title: 'some title',
     body: 'some title',
     isCompleted: false,
@@ -33,7 +33,7 @@ interface IToDoList {
 
 class ToDoList implements IToDoList {
 
-    tasks: any = []
+    tasks:any = []
 
 
     public adding(task: ITask): ITask[] {
@@ -41,7 +41,7 @@ class ToDoList implements IToDoList {
         return this.tasks
     }
 
-    public delete(task:ITask): any {
+    public delete(task:ITask): ITask {
         const propertyId = task.id
         if(this.tasks.find((id:number) => task.id ===propertyId)){
             this.tasks.pop()
