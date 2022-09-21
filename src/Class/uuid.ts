@@ -1,33 +1,61 @@
-// const dp = require('uuid')
-// const id3 = dp
-// console.log(id3.v4())
-//
-// let now = new Date()
-// console.log(now)
-//
-// let Jan01_1970 = new Date(24*3600*1000)
-// console.log(Jan01_1970)
-//
-// let Dec31_1969 = new Date (-24 * 3600 * 1000)
-// console.log(Dec31_1969)
-//
-// let date = new Date()
-// date.setSeconds(date.getSeconds() + 70)
-// console.log(date)
-//
-// let start: any = new Date()
-//
-// for (let i = 0; i < 100000; i++){
-//
-//     }
-//
-// let end: any = new Date()
-//
-// console.log(`Цикл спрацював за ${end - start} `)
+const {v4: uuidv4} = require('uuid')
+
+interface ITask {
+    id: any,
+    title: string,
+    body: string,
+    isCompleted: boolean,
+    createdAt: string,
+    updatedAt: string
+}
+
+const task = {
+    id: 2,
+    title: 'some title',
+    body: 'some title',
+    isCompleted: false,
+    createdAt: new Date().toLocaleString(),
+    updatedAt: new Date().toLocaleString()
+}
+
+interface IToDoList {
+
+    adding(
+        task: ITask
+    ): ITask[]
+
+    delete(
+        task: ITask
+    ): any
 
 
-const http = require('http')
-http.createServer((request:any, response:any) =>{
-    response.write('Hollo world')
-    request.end
-}).listen(8000)
+}
+
+class ToDoList implements IToDoList {
+
+    tasks: any = []
+
+
+    public adding(task: ITask): ITask[] {
+        this.tasks.push(task)
+        return this.tasks
+    }
+
+    public delete(task:ITask): any {
+        const propertyId = task.id
+        if(this.tasks.find((id:number) => task.id ===propertyId)){
+            this.tasks.pop()
+        }
+        return this.tasks
+    }
+
+
+}
+
+const toDoList = new ToDoList()
+
+const resultAdding = toDoList.adding(task)
+console.log(resultAdding)
+
+const resultDelete = toDoList.delete(task)
+console.log(resultDelete)
