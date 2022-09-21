@@ -25,8 +25,8 @@ interface IToDoList {
     ): ITask[]
 
     delete(
-        task: ITask
-    ): any
+        id: number
+    ): number
 
 
 }
@@ -41,12 +41,17 @@ class ToDoList implements IToDoList {
         return this.tasks
     }
 
-    public delete(task:ITask): ITask {
-        const propertyId = task.id
-        if(this.tasks.find((id:number) => task.id ===propertyId)){
-            this.tasks.pop()
+    public delete(id: number): number {
+        for (const value of this.tasks) {
+            if (value.id === id){
+                this.tasks.pop()
+            }
+
         }
+
         return this.tasks
+
+
     }
 
 
@@ -57,5 +62,5 @@ const toDoList = new ToDoList()
 const resultAdding = toDoList.adding(task)
 console.log(resultAdding)
 
-const resultDelete = toDoList.delete(task)
+const resultDelete = toDoList.delete(task.id)
 console.log(resultDelete)
