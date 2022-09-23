@@ -337,21 +337,27 @@
 
 
 let originalArrey = [{name: 'John', age: 15}, {name: 'Ann', age: 21}, {name: 'Mire', age: 13}]
-class fi {
-    // @ts-ignore
-    public del (age: number){
-
-
-           let filterArreyu = originalArrey.filter(vel => vel.age !== age);
-
-
-        return filterArreyu
-    }
+const jfjfj = []
+for (let arr of originalArrey){
+    jfjfj.push(arr)
+    console.log(arr)
 }
 
-const ld = new fi()
-const sd = ld.del(13)
-console.log(sd)
+// class fi {
+//     // @ts-ignore
+//     public del (age: number){
+//
+//
+//            let filterArreyu = originalArrey.filter(vel => vel.age !== age);
+//
+//
+//         return filterArreyu
+//     }
+// }
+//
+// const ld = new fi()
+// const sd = ld.del(13)
+// console.log(sd)
 
 
 // let filterArrey = originalArrey.filter(value => value.age === 13)

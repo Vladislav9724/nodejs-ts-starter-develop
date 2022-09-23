@@ -42,19 +42,21 @@
 //     }
 //
 //     public delete(id: string): ITask[] {
-//         let filter = this.tasks.filter(value => value.id !== id)
-//         return filter
+//         this.tasks.filter(value => value.id !== id)
+//
+//         return this.tasks
 //     }
+//
 //
 // }
 //
 // const toDoList = new ToDoList()
 //
-// const resultAdding = toDoList.adding(task)
-// const resultAdding1 = toDoList.adding(task1)
-// console.log(resultAdding)
+// let resultAdding = toDoList.adding(task)
+//     // resultAdding = toDoList.adding(task1)
+// console.log(resultAdding[1])
 //
-// const id = task.id
-//
-// const resultDelete = toDoList.delete(id)
-// console.log(resultDelete)
+// // const id = toDoList.adding(task.id)
+// //
+// // const resultDelete = toDoList.delete(String(id))
+// // console.log(resultDelete)
