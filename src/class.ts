@@ -1,52 +1,74 @@
-// interface IUser{
-//     userId: number,
-//     name: string,
-//     city: string,
-//     age: number,
-//     address?: IAddress,
-//     photo?:{
-//         url: string
+// const {v4: uuidv4} = require('uuid')
+//
+// interface ITask {
+//     id: any,
+//     title: string,
+//     body: string,
+//     isCompleted: boolean,
+//     createdAt: string,
+//     updatedAt: string
+// }
+//
+// const task = {
+//     id: uuidv4(),
+//     title: 'some title',
+//     body: 'some title',
+//     isCompleted: false,
+//     createdAt: new Date().toLocaleString(),
+//     updatedAt: new Date().toLocaleString()
+// }
+// const task1 = {
+//     id: uuidv4(),
+//     title: 's te',
+//     body: 's ti',
+//     isCompleted: false,
+//     createdAt: new Date().toLocaleString(),
+//     updatedAt: new Date().toLocaleString()
+// }
+//
+// interface IToDoList {
+//
+//     adding(
+//         task: ITask,
+//         task1:ITask): ITask[]
+//
+//     delete(
+//         id: number
+//     ): number
+//
+//
+// }
+//
+// class ToDoList implements IToDoList {
+//
+//     tasks:any = []
+//
+//
+//     public adding(task: ITask, task1:ITask): ITask[] {
+//         this.tasks.push(task,task1)
+//         return this.tasks
 //     }
-// }
-// interface IAddress {
-//     street: string,
-//     house: number,
-//     apartment: number
-// }
 //
+//     public delete(id: number): number {
+//         for (const value of this.tasks) {
+//             if (value.id === id){
+//                 this.tasks.pop()
+//             }
 //
-// const user1 = {
-//     userId: 1,
-//     name: 'Vova',
-//     city: 'Lviv',
-//     age: 26,
-//     address: {
-//         street: 'Lvivska',
-//         house: 20,
-//         apartment: 91,
-//     }
-// }
-// interface IGetUserKey{
-//     user1: IUser
-// }
-//
-// class User {
-//     public user1:IUser
-//
-//     constructor(user1:IUser) {
-//         this.user1 = user1
-//     }
-//     public getUserKey(user1:IUser):any {
-//         const getUserKeys:any = []
-//         for (let key in user1){
-//             // getUserKey.push(key)
 //         }
-//         if(typeof user1 === 'object'){
-//             getUserKey (user1[key])
-//         }
-//         return getUserKeys
+//
+//         return this.tasks
+//
+//
 //     }
 //
+//
 // }
-// const li = new User(user1)
-// console.log(li.getUserKey(user1))
+//
+// const toDoList = new ToDoList()
+//
+// const resultAdding = toDoList.adding(task, task1)
+// console.log(resultAdding)
+//
+// const resultDelete = toDoList.delete(task.id)
+// console.log(resultDelete)
