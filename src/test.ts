@@ -343,6 +343,7 @@ for (let arr of originalArrey){
     console.log(arr)
 }
 
+
 // class fi {
 //     // @ts-ignore
 //     public del (age: number){

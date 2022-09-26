@@ -1,3 +1,4 @@
+
 const {v4: uuidv4} = require('uuid')
 
 interface ITask {
@@ -28,28 +29,30 @@ const task1 = {
 
 interface IToDoList {
 
-    adding(task: ITask): ITask[]
-    delete(id: string): ITask[]
+    adding(task: ITask): ITask
+    // delete(id: string): ITask[]
 }
 
 class ToDoList implements IToDoList {
 
-    private tasks:ITask[] = []
+     tasks:ITask[] = []
 
-    public adding(task: ITask): any {
+
+
+    // @ts-ignore
+    public adding(task: ITask): ITask {
         this.tasks.push(task)
-        for (let newTask of this.tasks){
-            return newTask
+        for (let newTask of this.tasks) {
+           return newTask
         }
 
     }
 
-    public delete(id: string): ITask[] {
-        this.tasks.filter(value => value.id === id)
 
-        return this.tasks
-    }
-
+    // public delete(id: string): ITask[] {
+    //     let filter = this.tasks.filter(value => value.id !== id)
+    //     return filter
+    // }
 
 }
 
@@ -59,9 +62,7 @@ let resultAdding = toDoList.adding(task)
     // resultAdding = toDoList.adding(task1)
 console.log(resultAdding)
 
-
-// const id = resultAdding.id
-// console.log(id)
+// const id = task.id
 
 // const resultDelete = toDoList.delete(id)
 // console.log(resultDelete)
