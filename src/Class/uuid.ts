@@ -1,4 +1,5 @@
 
+
 const {v4: uuidv4} = require('uuid')
 
 interface ITask {
@@ -39,12 +40,14 @@ class ToDoList implements IToDoList {
 
 
 
+
     // @ts-ignore
     public adding(task: ITask): ITask {
-        this.tasks.push(task)
-        for (let newTask of this.tasks) {
-           return newTask
+         this.tasks.push(task)
+        for (let elem of this.tasks){
+             return elem
         }
+
 
     }
 
