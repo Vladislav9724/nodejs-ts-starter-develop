@@ -30,25 +30,25 @@ const task1 = {
 
 interface IToDoList {
 
-    adding(task: ITask): ITask|undefined
-    // delete(id: string): ITask[]
+    adding(task: ITask): ITask
+    // delete(id: string): string
 }
 
 class ToDoList implements IToDoList {
 
      tasks: ITask[] = []
 
-    public adding(task: ITask): ITask|undefined {
+    public adding(task: ITask): ITask {
         this.tasks.push(task)
         let newTask: ITask|undefined = this.tasks.find((elem:ITask) => elem.id === task.id)
         if (newTask !== undefined){
             return newTask
-        } else throw "No task found"
+        } else throw 'No task found'
 
     }
 
 
-    // public delete(id: string): ITask[] {
+    // public delete(id: string): string {
     //     let filter = this.tasks.filter(value => value.id !== id)
     //     return filter
     // }
