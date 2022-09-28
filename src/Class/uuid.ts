@@ -40,10 +40,10 @@ class ToDoList implements IToDoList {
 
     public adding(task: ITask): ITask|undefined {
         this.tasks.push(task)
-
         let newTask: ITask|undefined = this.tasks.find((elem:ITask) => elem.id === task.id)
-
-        return newTask
+        if (newTask !== undefined){
+            return newTask
+        } else throw "No task found"
 
     }
 
@@ -58,10 +58,10 @@ class ToDoList implements IToDoList {
 const toDoList = new ToDoList()
 
 const resultAdding = toDoList.adding(task)
-   const  resultAdding1 = toDoList.adding(task1)
+const resultAdding1 = toDoList.adding(task1)
 console.log(resultAdding)
 
-// const id = task.id
+const id = toDoList.adding(task.id)
 
 // const resultDelete = toDoList.delete(id)
 // console.log(resultDelete)

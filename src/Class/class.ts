@@ -1,3 +1,5 @@
+//
+//
 // const {v4: uuidv4} = require('uuid')
 //
 // interface ITask {
@@ -28,23 +30,26 @@
 //
 // interface IToDoList {
 //
-//     adding(task: ITask): ITask[]
-//     delete(id: string): ITask[]
+//     adding(task: ITask): ITask|undefined
+//     // delete(id: string): ITask[]
 // }
 //
 // class ToDoList implements IToDoList {
 //
-//     private tasks:ITask[] = []
+//     tasks: ITask[] = []
 //
-//     public adding(task: ITask): ITask[] {
+//     public adding(task: ITask): ITask|undefined {
 //         this.tasks.push(task)
-//         return this.tasks
+//         let newTask: ITask|undefined = this.tasks.find((elem:ITask) => elem.id === task.id)
+//         return newTask
+//
 //     }
 //
-//     public delete(id: string): ITask[] {
-//         let filter = this.tasks.filter(value => value.id !== id)
-//         return filter
-//     }
+//
+//     // public delete(id: string): ITask[] {
+//     //     let filter = this.tasks.filter(value => value.id !== id)
+//     //     return filter
+//     // }
 //
 // }
 //
@@ -54,7 +59,8 @@
 // const resultAdding1 = toDoList.adding(task1)
 // console.log(resultAdding)
 //
-// const id = task.id
+// const id = toDoList.adding(task.id)
+// console.log(id)
 //
-// const resultDelete = toDoList.delete(id)
-// console.log(resultDelete)
+// // const resultDelete = toDoList.delete(id)
+// // console.log(resultDelete)
