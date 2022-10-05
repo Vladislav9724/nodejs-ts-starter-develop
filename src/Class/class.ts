@@ -1,4 +1,5 @@
 const {v4: uuidv4} = require('uuid')
+const { faker } = require('@faker-js/faker');
 
 interface ITask {
     id: string,
@@ -55,8 +56,8 @@ class ToDoList implements IToDoList {
 const toDoList = new ToDoList()
 
 const resultAdding = toDoList.adding('title 1', 'body 1')
-toDoList.adding('title 2', 'body 2')
-toDoList.adding('title 3', 'body 3')
+toDoList.adding(faker.word.noun(), faker.word.noun())
+toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
 toDoList.delete(resultAdding?.id)
 
