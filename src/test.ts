@@ -334,14 +334,22 @@
 //     newArr = cycle(arr); // newArr равняется результату выполнения функции cycle
 //     console.log(newArr);
 // }
-
-
-let originalArrey = [{name: 'John', age: 15}, {name: 'Ann', age: 21}, {name: 'Mire', age: 13}]
-const jfjfj = []
-for (let arr of originalArrey){
-    jfjfj.push(arr)
-    console.log(arr)
-}
+//
+//
+// let originalArrey = [{name: 'John', age: 15}, {name: 'Ann', age: 21}, {name: 'Mire', age: 13}]
+// const myIndex = originalArrey.indexOf({name:'Ann', age: 21})
+// if(myIndex !== -1){
+//     originalArrey.splice(myIndex, 1)
+//
+// }
+// console.log(originalArrey)
+//
+// const myArr = ['Anton', 'Ivan', 'Roman', 'Oleg']
+// const index = myArr.indexOf('Roman')
+// if (index !== -1){
+//     myArr.splice(index,1)
+// }
+// console.log(myArr)
 
 
 // class fi {
@@ -363,3 +371,24 @@ for (let arr of originalArrey){
 
 // let filterArrey = originalArrey.filter(value => value.age === 13)
 // console.log(filterArrey)
+
+
+
+// const arr1 = [{id:'222'},{ id:'333'}, {id:'444'}, {id:'555'}]
+// const arr2 = ['234','444', '323423425']
+//
+// arr1.forEach((item, i) => {
+//     for (i = 0; i < arr2.length; i++){
+//         if (item.id == arr2[i]){
+//             arr1.splice(i,1)
+//         }
+//     }
+// })
+// console.log(arr1)
+
+const arr = [1,2,3,4,5,6,7,8,9,]
+ let i =  arr.indexOf(7)
+if(i >=  0){
+    arr.splice(i, 1)
+}
+console.log(arr)

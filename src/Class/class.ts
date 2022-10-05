@@ -9,28 +9,10 @@ interface ITask {
     updatedAt: string
 }
 
-const task = {
-    id: uuidv4(),
-    title: 'some title',
-    body: 'some title',
-    isCompleted: false,
-    createdAt: new Date().toLocaleString(),
-    updatedAt: new Date().toLocaleString()
-}
-const task1 = {
-    id: uuidv4(),
-    title: 'Hello',
-    body: 'World',
-    isCompleted: true,
-    createdAt: new Date().toLocaleString(),
-    updatedAt: new Date().toLocaleString()
-}
-
 interface IToDoList {
-
-    adding(task: ITask): ITask|undefined
-
-    // delete(id: ITask): string
+    adding(title: string, body:string): ITask
+    find(): ITask[]
+    delete(id: string): string
 }
 
 class ToDoList implements IToDoList {
@@ -38,34 +20,48 @@ class ToDoList implements IToDoList {
     tasks: ITask[] = []
 
 
-    public adding(task: ITask): ITask|undefined {
-        this.tasks.push(task)
-        let newTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === task.id)
-        try {
-            if (newTask === undefined) {
-                throw new Error()
-            }
+    public adding(title: string, body:string): ITask {
+        const task = {
+            id: uuidv4(),
+            title: title,
+            body: body,
+            isCompleted: false,
+            createdAt: new Date().toLocaleString(),
+            updatedAt: new Date().toLocaleString()
         }
-        catch (err){
-            console.log('There is no task')
+        this.tasks.push(task)
+        const newTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === task.id)
+        if (newTask === undefined){
+            throw "NO task"
         }
         return newTask
+
+    }
+
+    public find (): ITask [] {
+        return this.tasks
     }
 
 
-    // public delete(id: ITask|undefined): any{
-    //
-    // }
+    public delete(id: string): string {
+        const indexId = this.tasks.findIndex(index => index.id === id)
+        this.tasks.splice(indexId, 1)
+        return id
+
+    }
 
 }
 
 const toDoList = new ToDoList()
 
-const resultAdding = toDoList.adding(task)
-const resultAdding1 = toDoList.adding(task1)
-console.log(resultAdding)
+const resultAdding = toDoList.adding('title 1', 'body 1')
+toDoList.adding('title 2', 'body 2')
+toDoList.adding('title 3', 'body 3')
+const resultFind = toDoList.find()
+toDoList.delete(resultAdding?.id)
 
-const id= toDoList.adding(task.id)
 
-// const resultDelete = toDoList.delete(id)
-// console.log(resultDelete)
+console.log(`Result = ${JSON.stringify(resultFind,null,2 )}`)
+
+const resultDelete = toDoList.delete(resultAdding?.id)
+console.log(`Id from the deleted task: ${resultDelete}`)
