@@ -42,7 +42,7 @@ interface IToDoList {
 
     delete(id: string): string
 
-    editing(title: string, body: string): ITask[]
+    editing(): ITask[]
 }
 
 class ToDoList implements IToDoList {
