@@ -386,9 +386,46 @@
 // })
 // console.log(arr1)
 
-const arr = [1,2,3,4,5,6,7,8,9,]
- let i =  arr.indexOf(7)
-if(i >=  0){
-    arr.splice(i, 1)
-}
-console.log(arr)
+// const arr = [1,2,3,4,5,6,7,8,9,]
+//  let i =  arr.indexOf(7)
+// if(i >=  0){
+//     arr.splice(i, 1)
+// }
+// console.log(arr)
+
+
+const posts = [
+    {
+        id:1,
+        text: 'One',
+        likes: '1'
+    },
+    {
+        id:2,
+        text: 'Two',
+        likes: 59
+    },
+    {
+        id:3,
+        text: 'Three',
+        likes: 4
+    },
+    {
+        id:4,
+        text: '4',
+        likes: '7'
+    }
+]
+posts.forEach((post) => post.id === 1? post.text = 'Oleg':post.text = post.text )
+console.log(posts)
+
+
+
+
+const newPost = posts.map((post) => ({
+    ...post,
+    text: post.id === 1? 'Olgafffffffffff': post.text,
+    likes: post.id === 1? '999': post.likes,
+    id: post.id === 1? 5: post.id
+}))
+console.log(newPost)
