@@ -12,18 +12,14 @@ interface ITask {
 
 interface IToDoList {
     adding(title: string, body: string): ITask
-
-    find(): ITask[]
-
-    delete(id: string): string
-
     editing(id: string,title: string, body: string):ITask
+    find(): ITask[]
+    delete(id: string): string
 }
 
 class ToDoList implements IToDoList {
 
     tasks: ITask[] = []
-
 
     public adding(title: string, body: string): ITask {
         const task = {
@@ -43,6 +39,19 @@ class ToDoList implements IToDoList {
 
     }
 
+    public editing(id:string,title:string, body:string): ITask {
+        const editingTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
+        if (editingTask === undefined) {
+            throw "NO task"
+        }
+
+       editingTask.title = title
+        editingTask.body= body
+
+        return editingTask
+
+    }
+
     public find(): ITask [] {
         return this.tasks
     }
@@ -57,32 +66,22 @@ class ToDoList implements IToDoList {
         return id
 
     }
-    public editing(id:string,title:string, body:string): ITask {
-        const editingTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
-        if (editingTask === undefined) {
-            throw "NO task"
-        }
-            editingTask.title =title,
-            editingTask.body = body,
-            editingTask.updatedAt
 
-        this.tasks.unshift(editingTask)
-
-        return editingTask
-
-    }
 
 }
 
 const toDoList = new ToDoList()
 
-const resultAdding = toDoList.adding('title 1', 'body 1')
+const resultAdding = toDoList.adding(faker.word.noun(), faker.word.noun())
 toDoList.adding(faker.word.noun(), faker.word.noun())
 toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
 const resultEditing = toDoList.editing(resultAdding?.id,'TITLE', 'BODY')
-const resultDelete = toDoList.delete(resultAdding?.id)
+
+// const resultDelete = toDoList.delete(resultAdding?.id)
 
 console.log(`Result = ${JSON.stringify(resultFind, null, 2)}`)
-console.log(`Id from the deleted task: ${resultDelete}`)
 console.log(`Result editing = ${JSON.stringify(resultEditing, null, 2)}`)
+// console.log(`Id from the deleted task: ${resultDelete}`)
+
+
