@@ -76,12 +76,13 @@ const resultAdding = toDoList.adding(faker.word.noun(), faker.word.noun())
 toDoList.adding(faker.word.noun(), faker.word.noun())
 toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
+
 const resultEditing = toDoList.editing(resultAdding?.id,'TITLE', 'BODY')
+console.log(`Task array  = ${JSON.stringify(resultFind, null, 2)}`)
+console.log(`Editing task   = ${JSON.stringify(resultEditing, null, 2)}`)
 
-// const resultDelete = toDoList.delete(resultAdding?.id)
-
-console.log(`Result = ${JSON.stringify(resultFind, null, 2)}`)
-console.log(`Result editing = ${JSON.stringify(resultEditing, null, 2)}`)
-// console.log(`Id from the deleted task: ${resultDelete}`)
+const resultDelete = toDoList.delete(resultAdding?.id)
+console.log(`Id from the deleted task id: ${resultDelete}`)
+console.log(`The array after removing the task by ID = ${JSON.stringify(resultFind, null, 2)}`)
 
 
