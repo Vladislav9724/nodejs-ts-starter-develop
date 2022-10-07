@@ -12,8 +12,11 @@ interface ITask {
 
 interface IToDoList {
     adding(title: string, body: string): ITask
-    editing(id: string,title: string, body: string):ITask
+
+    editing(id: string, title: string, body: string): ITask
+
     find(): ITask[]
+
     delete(id: string): string
 }
 
@@ -39,14 +42,14 @@ class ToDoList implements IToDoList {
 
     }
 
-    public editing(id:string,title:string, body:string): ITask {
+    public editing(id: string, title: string, body: string): ITask {
         const editingTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
         if (editingTask === undefined) {
             throw "NO task"
         }
 
-       editingTask.title = title
-        editingTask.body= body
+        editingTask.title = title
+        editingTask.body = body
 
         return editingTask
 
@@ -59,7 +62,7 @@ class ToDoList implements IToDoList {
 
     public delete(id: string): string {
         const indexId = this.tasks.findIndex(index => index.id === id)
-        if(indexId === undefined){
+        if (indexId === undefined) {
             throw "NO TASK"
         }
         this.tasks.splice(indexId, 1)
@@ -77,7 +80,7 @@ toDoList.adding(faker.word.noun(), faker.word.noun())
 toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
 
-const resultEditing = toDoList.editing(resultAdding?.id,'TITLE', 'BODY')
+const resultEditing = toDoList.editing(resultAdding?.id, 'TITLE', 'BODY')
 console.log(`Task array  = ${JSON.stringify(resultFind, null, 2)}`)
 console.log(`Editing task   = ${JSON.stringify(resultEditing, null, 2)}`)
 
