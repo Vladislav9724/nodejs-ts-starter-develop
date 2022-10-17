@@ -13,7 +13,7 @@ interface ITask {
 interface IToDoList {
     adding(title: string, body: string): ITask
 
-    editing(id: string, title: string, body: string): ITask
+    editing(id: string, title: string, body: string, updatedAt: string): ITask
 
     find(): ITask[]
 
@@ -42,7 +42,7 @@ class ToDoList implements IToDoList {
 
     }
 
-    public editing(id: string, title: string, body: string): ITask {
+    public editing(id: string, title: string, body: string, updatedAt: string): ITask {
         const editingTask: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
         if (editingTask === undefined) {
             throw "NO task"
@@ -76,14 +76,14 @@ class ToDoList implements IToDoList {
 const toDoList = new ToDoList()
 
 const resultAdding = toDoList.adding(faker.word.noun(), faker.word.noun())
-toDoList.adding(faker.word.noun(), faker.word.noun())
-toDoList.adding(faker.word.noun(), faker.word.noun())
+const resultAdding1 = toDoList.adding(faker.word.noun(), faker.word.noun())
+const resultAdding2 = toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
 
-const resultEditing = toDoList.editing(resultAdding?.id, 'CEK', 'VRIP')
+const resultEditing = toDoList.editing(resultAdding1?.id, 'CEK', 'VRIP', new Date().toLocaleString())
 console.log(`Task array  = ${JSON.stringify(resultFind, null, 2)}`)
 console.log(`Editing task   = ${JSON.stringify(resultEditing, null, 2)}`)
 
-const resultDelete = toDoList.delete(resultAdding?.id)
+const resultDelete = toDoList.delete(resultAdding1?.id)
 console.log(`Id from the deleted task id: ${resultDelete}`)
 
