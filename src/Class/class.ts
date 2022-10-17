@@ -17,6 +17,8 @@ interface IToDoList {
 
     find(): ITask[]
 
+    receiving(id: string): ITask
+
     delete(id: string): string
 }
 
@@ -60,6 +62,15 @@ class ToDoList implements IToDoList {
         return this.tasks
     }
 
+    public receiving(id: string): ITask {
+        const receivingTask:ITask|undefined = this.tasks.find((elem:ITask) => elem.id === id)
+        if (receivingTask === undefined){
+            throw "NO TASK"
+        }
+
+        return receivingTask
+    }
+
 
     public delete(id: string): string {
         const indexId = this.tasks.findIndex(index => index.id === id)
@@ -81,9 +92,13 @@ const resultAdding1 = toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultAdding2 = toDoList.adding(faker.word.noun(), faker.word.noun())
 const resultFind = toDoList.find()
 
+const resultReceiving = toDoList.receiving(resultAdding?.id)
+
 const resultEditing = toDoList.editing(resultAdding1?.id, 'CEK', 'VRIP')
 console.log(`Task array  = ${JSON.stringify(resultFind, null, 2)}`)
 console.log(`Editing task   = ${JSON.stringify(resultEditing, null, 2)}`)
+
+console.log(`Receiving the task by id = ${JSON.stringify(resultReceiving,null,2)}`)
 
 const resultDelete = toDoList.delete(resultAdding1?.id)
 console.log(`Id from the deleted task id: ${resultDelete}`)
