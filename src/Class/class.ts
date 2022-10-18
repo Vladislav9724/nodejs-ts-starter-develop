@@ -63,12 +63,12 @@ class ToDoList implements IToDoList {
     }
 
     public getById(id: string): ITask {
-        const taskById: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
-        if (taskById === undefined) {
+        const task: ITask | undefined = this.tasks.find((elem: ITask) => elem.id === id)
+        if (task === undefined) {
             throw "NO TASK"
         }
 
-        return taskById
+        return task
     }
 
 
